@@ -23,20 +23,19 @@ You will notice there are several JavaScript files being brought into the index.
 In meeting the minimum viable product (MVP) specifications listed below, you should have a console full of correct responses to the problems given.
 
 ## Self-Study Questions
-
 Demonstrate your understanding of this week's concepts by answering the following free-form questions.
 
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your team lead
 
-1. Describe the biggest difference between `.forEach` & `.map`.
+- [ ] Briefly compare and contrast .forEach & .map (2-3 sentences max)
 
-2. What is the difference between a function and a method?
+- [ ]Explain the difference between a callback and a higher order function.
 
-3. What is closure?
+- [ ] What is closure?
 
-4. Describe the four rules of the 'this' keyword.
+- [ ] Describe the four rules of the 'this' keyword.
 
-5. Why do we need super() in an extended class?
+- [ ] Why do we need super() in an extended class?
 
 ## Project Set up
 
@@ -64,24 +63,20 @@ Your finished project must include all of the following requirements:
 
 **Pro tip for this challenge: If something seems like it isn't working locally, copy and paste your code up to codepen and take another look at the console.**
 
-## Task 1: Objects and Arrays
+## Task A: Objects and Arrays
 Test your knowledge of objects and arrays. 
 * [ x ] Use the [objects-arrays.js](challenges/objects-arrays.js) link to get started.  Read the instructions carefully!
-
-## Task 2: Functions
-This challenge takes a look at callbacks and closures as well as scope. 
-* [ x ] Use the [functions.js](challenges/functions.js) link to get started. Read the instructions carefully!
 
 ## Task B: Closure
 This challenge takes a look at closures as well as scope.
 
- [ ] Use the closure.js link to get started. Read the instructions carefully!
+* [ x ] Use the closure.js link to get started. Read the instructions carefully!
 
-## Task 3: Prototypes
+## Task C: Prototypes
 Create constructors, bind methods, and create cuboids in this prototypes challenge.
-* [ ] Use the [prototypes.js](challenges/prototypes.js) link to get started. Read the instructions carefully!
+* [ x ] Use the [prototypes.js](challenges/prototypes.js) link to get started. Read the instructions carefully!
 
-## Task 4: Classes
+## Task D: Classes
 Once you have completed the prototypes challenge, it's time to convert all your hard work into classes.
 * [ ] Use the [classes.js](challenges/classes.js) link to get started. Read the instructions carefully!
 
