@@ -5,6 +5,28 @@
   Use this pattern to create your objects: 
   object name, diet, weight, length, period
 */
+const tyrannosaurus = {
+  diet: "carnivorous",
+  weight: "7000kg",
+  length: "12m",
+  period: "Late Cretaceous",
+  roar: function(){
+    return "RAWERSRARARWERSARARARRRR!"
+  }
+}
+const stegosaurus = {
+  diet: "herbivorous",
+  weight: "2000kg",
+  length: "9m",
+  period: "Late Jurassic",
+}
+const velociraptor = {
+  diet: "carnivorous",
+  weight: "15kg",
+  length: "1.8m",
+  period: "Late Cretaceous",
+}
+
 
 // tyrannosaurus, carnivorous, 7000kg, 12m, Late Cretaceous
 
@@ -15,20 +37,20 @@
 // Using your dinosaur objects, log answers to these questions:
 
 // How much did tyrannosaurus weigh?
-console.log();
+console.log(tyrannosaurus.weight);
 
 // What was the diet of a velociraptor?
-console.log();
+console.log(velociraptor.diet);
 
 // How long was a stegosaurus?
-console.log();
+console.log(stegosaurus.weight);
 
 // What time period did tyrannosaurus live in?
-console.log();
+console.log(tyrannosaurus.period);
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-console.log();
+console.log(tyrannosaurus.roar());
 
 
 // ==== Arrays ====
@@ -52,6 +74,9 @@ const graduates = [
 
 Once you have the new array created, log the result. */
 const universities = [];
+graduates.forEach((item) => {
+  return universities.push(item.university);
+})
 console.log(universities);
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. This will be an array of strings.
@@ -61,10 +86,18 @@ The resulting contact information strings should have a space between the first 
 
 Log the result of your new array. */
 const contactInfo = [];
+graduates.forEach((item) => {
+  return contactInfo.push(`Name: ${item.first_name}, Email: ${item.email}`);
+})
 console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
 const unisWithUni = [];
+graduates.forEach((item) => {
+  if(item.university.toLowerCase().includes("uni")) {
+    return unisWithUni.push(item.university);
+  }
+})
 console.log(unisWithUni);
 
 
@@ -91,6 +124,9 @@ The zoos want to display both the scientific name and the animal name in front o
 
 */
 const displayNames = [];
+zooAnimals.forEach((item) => {
+  return displayNames.push(`Name: ${item.animal_name}, Scientific: ${item.scientific_name}`);
+})
 console.log(displayNames);
 
 /* Request 2: .map()
@@ -100,6 +136,9 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 */
 
 const lowCaseAnimalNames = [];
+zooAnimals.map((item) => {
+  return lowCaseAnimalNames.push(item.animal_name.toLowerCase());
+})
 console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
@@ -107,7 +146,9 @@ console.log(lowCaseAnimalNames);
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const lowPopulationAnimals = [];
+const lowPopulationAnimals = zooAnimals.filter((item) => {
+  return item.population < 5;
+})
 console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
@@ -115,13 +156,49 @@ console.log(lowPopulationAnimals);
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
-const populationTotal = 0;
+const populationTotal = zooAnimals.reduce((sum, pop) => {
+  return sum + pop.population;
+}, 0)
 console.log(populationTotal);
+
+// ==== Callbacks ====  
+
+/* Step 1: Create a higher-order function
+  * Create a higher-order function named consume with 3 parameters: a, b and cb
+  * The first two parameters can take any argument (we can pass any value as argument)
+  * The last parameter accepts a callback
+  * The consume function should return the invocation of cb, passing a and b into cb as arguments
+*/
+const consume = (a, b, cb) => {
+  return cb(a,b);
+}
+
+/* Step 2: Create several functions to callback with consume();
+  * Create a function named add that returns the sum of two numbers
+  * Create a function named multiply that returns the product of two numbers 
+  * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
+*/
+const add = (num1, num2) => {
+  return num1 + num2;
+}
+
+const multiply = (num1, num2) => {
+  return num1 * num2;
+}
+
+const greeting = (fname, lname) => {
+  return `Hello ${fname} ${lname}, nice to meet you! `
+}
+
+/* Step 3: Check your work by un-commenting the following calls to consume(): */
+console.log(consume(2, 2, add)); // 4
+console.log(consume(10, 16, multiply)); // 160
+console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
 
 
 /*
 
-Stretch: If you haven't already, convert your array method callbacks into arrow functions.
+Stretch: If you haven't already, convert your array method callbacks into arrow functions.  
 
 */
 
